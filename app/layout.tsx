@@ -8,9 +8,8 @@ import { ReactQueryProvider } from "@/providers/react-query-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Binario Store",
-  description:
-    "Loja de venda de material de escritório e e aparelhos electrónicos.",
+  title: "AM Power Trading",
+  description: "Loja de venda de material de construcao.",
 };
 
 export default function RootLayout({
