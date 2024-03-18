@@ -1,5 +1,4 @@
-import * as React from "react";
-
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -9,7 +8,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 const products = [
   {
@@ -52,7 +50,7 @@ export function ProductsCarousel() {
             <div className="p-1">
               <Card>
                 <CardContent className="flex flex-col p-3 justify-center">
-                  <figure className="bg-cyan-800 w-[90%] text-white my-2 h-40 rounded-md mx-auto flex justify-center items-center">
+                  <figure className="bg-green-800 w-[90%] text-white my-2 h-40 rounded-md mx-auto flex justify-center items-center">
                     IMAGEM DO PRODUTO
                   </figure>
                   <div className="text-slate-800 text-center">

@@ -38,19 +38,12 @@ export const Header = () => {
             <h1>
               <span
                 className={`${
-                  scrollY > 80 ? "text-primary" : "text-white"
-                }  mr-1 text-2xl py-1 font-medium`}
-              >
-                Binario
-              </span>
-              <span
-                className={`${
                   scrollY > 80
-                    ? "text-primary-foreground bg-primary"
-                    : "text-primary bg-primary-foreground"
-                } px-2 py-1 rounded-lg text-lg font-normal`}
+                    ? "border-primary text-primary"
+                    : "border-white text-white"
+                }  mr-1 text-2xl py-1 font-medium border px-2`}
               >
-                Store
+                LOGO
               </span>
             </h1>
           </Link>

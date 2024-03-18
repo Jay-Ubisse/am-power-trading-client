@@ -10,19 +10,19 @@ import {
 const categories = [
   {
     imageUrl: "",
-    name: "Computadores",
+    name: "Categoria A",
   },
   {
     imageUrl: "",
-    name: "Impressoras",
+    name: "Categoria B",
   },
   {
     imageUrl: "",
-    name: "Máquinas Fotocopiadoras",
+    name: "Categoria C",
   },
   {
     imageUrl: "",
-    name: "Tóners",
+    name: "Categoria D",
   },
 ];
 export function CategoryCarousel() {
@@ -40,7 +40,7 @@ export function CategoryCarousel() {
             <div className="p-1">
               <Card>
                 <CardContent className="flex flex-col justify-center p-6">
-                  <figure className="bg-cyan-800 w-40 h-40 rounded-[50%] text-white my-2 mx-auto text-center flex justify-center items-center">
+                  <figure className="bg-green-800 w-40 h-40 rounded-[50%] text-white my-2 mx-auto text-center flex justify-center items-center">
                     IMAGEM DA CATEGORIA
                   </figure>
                   <div className="text-slate-800 text-center">

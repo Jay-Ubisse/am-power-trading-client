@@ -1,6 +1,5 @@
 import { Facebook, Instagram, X, YouTube } from "@mui/icons-material";
 import Image from "next/image";
-import Link from "next/link";
 import { FooterSection } from "./footer-section";
 
 export const Footer = () => {
@@ -10,7 +9,7 @@ export const Footer = () => {
     <footer className="bg-primary-foreground flex flex-col gap-8 pt-7">
       <FooterSection
         title="Contacto"
-        items={["vendas@binario.co.mz", "(+258} 84 883 9501 / 87 702 7713"]}
+        items={["vendas@site.co.mz", "(+258} 84 883 9501 / 87 702 7713"]}
         icons={[
           <Facebook key="1" />,
           <X key="2" />,
@@ -80,12 +79,7 @@ export const Footer = () => {
         </div>
       </section>
       <section className="bg-slate-100 text-slate-800 text-center py-3 text-xs font-light">
-        <p>
-          &copy; {date.getFullYear()} Loja Binario. Desenvolvido e mantido pela{" "}
-          <span className="underline text-primary">
-            <Link href="#">Binario</Link>
-          </span>
-        </p>
+        <p>&copy; {date.getFullYear()} AM Power Trading.</p>
       </section>
     </footer>
   );

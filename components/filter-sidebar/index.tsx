@@ -1,17 +1,5 @@
 import { Button } from "@/components/ui/button";
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { SlidersHorizontal } from "lucide-react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import {
   Form,
   FormControl,
   FormField,
@@ -26,7 +14,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Slider } from "@/components/ui/slider";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { SlidersHorizontal } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 type SliderProps = React.ComponentProps<typeof Slider>;
 
@@ -79,10 +79,10 @@ export function FilterSideBar({ className, ...props }: SliderProps) {
                       </FormControl>
                       <SelectContent>
                         <SelectItem value="all">Todos</SelectItem>
-                        <SelectItem value="computers">Computadores</SelectItem>
-                        <SelectItem value="printers">Impressoras</SelectItem>
+                        <SelectItem value="computers">Categoria A</SelectItem>
+                        <SelectItem value="printers">Categoria B</SelectItem>
                         <SelectItem value="photocopying-machines">
-                          Máquinas Fotocopiadoras
+                          Categoria C
                         </SelectItem>
                       </SelectContent>
                     </Select>
@@ -107,9 +107,9 @@ export function FilterSideBar({ className, ...props }: SliderProps) {
                       </FormControl>
                       <SelectContent>
                         <SelectItem value="all">Todos</SelectItem>
-                        <SelectItem value="hp">HP</SelectItem>
-                        <SelectItem value="samsung">Samsung</SelectItem>
-                        <SelectItem value="apple">Apple</SelectItem>
+                        <SelectItem value="hp">Marca A</SelectItem>
+                        <SelectItem value="samsung">Marca B</SelectItem>
+                        <SelectItem value="apple">Marca C</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />

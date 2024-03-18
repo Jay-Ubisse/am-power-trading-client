@@ -34,7 +34,7 @@ export function Cart() {
             <div className="flex gap-2">
               <div className="h-16 w-16">
                 <Image
-                  src={"/macbook-pro.jpg"}
+                  src={"/toolkit.jpeg"}
                   alt="m-pesa logo"
                   width="0"
                   height="0"
@@ -44,15 +44,19 @@ export function Cart() {
               </div>
               <div className="relative text-slate-800 flex-1 flex justify-between">
                 <div>
-                  <h2 className="font-medium text-sm">Macbook Pro 2021 M2</h2>
-                  <h3 className="text-xs mt-1">256GB SSD 16GB RAM</h3>
+                  <h2 className="font-medium text-sm">
+                    Kit de ferramentas de electricidade
+                  </h2>
+                  <h3 className="text-xs mt-1">
+                    Kit completo de electricidade
+                  </h3>
                 </div>
                 <CloseIcon style={{ fontSize: 20 }} />
               </div>
             </div>
             <div className="flex justify-between mt-3">
               <ProductQuantity />
-              <p className="text-slate-800 font-medium text-sm">1240.00 MT</p>
+              <p className="text-slate-800 font-medium text-sm">12,440.00 MT</p>
             </div>
           </div>
         </div>

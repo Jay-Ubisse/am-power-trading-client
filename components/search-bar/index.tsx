@@ -8,9 +8,9 @@ export const SearchBar = () => {
       <Input
         type="search"
         placeholder="Procurar..."
-        className="bg-primary-foreground rounded-tr-none rounded-br-none focus-visible:ring-0"
+        className="bg-primary-foreground !rounded-tr-none !rounded-br-none focus-visible:ring-0"
       />
-      <Button type="submit" className="rounded-tl-none rounded-bl-none">
+      <Button type="submit" className="!rounded-tl-none !rounded-bl-none">
         <SearchIcon />
       </Button>
     </div>

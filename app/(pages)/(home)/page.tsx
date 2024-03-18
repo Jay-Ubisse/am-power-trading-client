@@ -49,7 +49,7 @@ export default function Home() {
       </section>
       <section
         className="my-4 bg-cover h-[25rem]"
-        style={{ backgroundImage: "url('/macbook-pro.jpg')" }}
+        style={{ backgroundImage: "url('/toolkit.jpeg')" }}
       >
         <div className="w-full h-full bg-gradient-to-b from-primary to-transparent p-2 px-4">
           <p className="text-primary bg-primary-foreground px-2 py-1 rounded w-fit mt-4 text-sm font-light">
@@ -59,7 +59,7 @@ export default function Home() {
             <span className="block text-5xl">30%</span> <span>DE DESCONTO</span>
           </h3>
           <p className="text-white text-base font-semibold">
-            no MacBook Pro 2021 M2
+            Kit completo de ferramentas de Eletricidade
           </p>
           <div className="mt-2">
             <p className="text-sm font-light text-white mb-5">
