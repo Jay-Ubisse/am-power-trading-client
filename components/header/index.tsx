@@ -74,15 +74,19 @@ export const Header = () => {
         </nav>
       </header>
       {/* Desktop version Version */}
-      <header className="hidden lg:flex bg-transparent justify-between px-4">
-        <Link href="/" className="w-32 h-48"></Link>
-        <section className="flex gap-8 mt-10">
+      <header className="hidden lg:flex items-center bg-transparent justify-between p-4">
+        <Link href="/" className="w-fit">
+          <h1 className="border-primary text-primary mr-1 text-2xl py-1 font-medium border-2 px-2">
+            LOGO
+          </h1>
+        </Link>
+        <section className="flex gap-8   h-full">
           <nav
             className={`flex justify-end w-fit h-fit bg-transparent text-white`}
           >
             <NavLinks />
           </nav>
-          <div className="flex items-center w-ful h-fit gap-4 mt-2"></div>
+          <Cart />
         </section>
       </header>
     </>

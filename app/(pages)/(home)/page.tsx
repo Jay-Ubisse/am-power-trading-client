@@ -17,7 +17,7 @@ export default function Home() {
       <section>
         <CarouselPlugin />
       </section>
-      <section className="max-w-[80%] mx-auto relative -top-4">
+      <section className="w-[80%] lg:w-[30%] mx-auto relative -top-4">
         <SearchBar />
       </section>
       <section className="bg-white mx-2 rounded-xl p-5">
@@ -25,7 +25,7 @@ export default function Home() {
       </section>
       <section className="bg-white my-4 p-1 pb-3">
         <Slide direction="down">
-          <h1 className="my-4 text-xl text-slate-800 text-center font-semibold">
+          <h1 className="my-4 text-xl lg:text-3xl lg:text-primary text-slate-800 text-center font-semibold">
             Mais Vendidos
           </h1>
         </Slide>
@@ -40,7 +40,7 @@ export default function Home() {
       </section>
       <section className="bg-white my-4 p-1">
         <Slide direction="down">
-          <h1 className="my-4 text-xl text-slate-800 text-center font-semibold">
+          <h1 className="my-4 text-xl lg:text-3xl lg:text-primary text-slate-800 text-center font-semibold">
             Compre por Categoria
           </h1>
         </Slide>
@@ -51,18 +51,18 @@ export default function Home() {
         className="my-4 bg-cover h-[25rem]"
         style={{ backgroundImage: "url('/toolkit.jpeg')" }}
       >
-        <div className="w-full h-full bg-gradient-to-b from-primary to-transparent p-2 px-4">
-          <p className="text-primary bg-primary-foreground px-2 py-1 rounded w-fit mt-4 text-sm font-light">
+        <div className="w-full h-full bg-gradient-to-b lg:bg-gradient-to-br from-primary to-transparent p-2 px-4">
+          <p className="text-primary bg-primary-foreground px-2 py-1 rounded w-fit mt-4 lg:mt-10 lg:ml-10 lg:text-lg text-sm lg:font-normal font-light">
             Oferta do dia
           </p>
-          <h3 className="mt-5 mb-2 text-white font-semibold text-4xl">
+          <h3 className="mt-5 mb-2 lg:ml-10 text-white font-semibold text-4xl">
             <span className="block text-5xl">30%</span> <span>DE DESCONTO</span>
           </h3>
-          <p className="text-white text-base font-semibold">
+          <p className="text-white text-base font-semibold lg:ml-10 lg:text-xl">
             Kit completo de ferramentas de Eletricidade
           </p>
-          <div className="mt-2">
-            <p className="text-sm font-light text-white mb-5">
+          <div className="mt-2 lg:ml-10">
+            <p className="text-sm font-light lg:text-base lg:font-medium text-white mb-5">
               Quantidades limitadas.
             </p>
             <Link href="#">
@@ -82,7 +82,7 @@ export default function Home() {
       </section>
       <section className="bg-primary mt-4 p-1 pb-7">
         <Slide direction="down">
-          <h1 className="my-4 text-xl text-primary-foreground text-center font-semibold">
+          <h1 className="my-4 text-xl lg:text-3xl text-primary-foreground text-center font-semibold">
             Boletim de Notícias
           </h1>
         </Slide>

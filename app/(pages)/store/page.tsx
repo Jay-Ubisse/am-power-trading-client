@@ -78,7 +78,7 @@ const Store = () => {
             <FilterSideBar />
           </div>
         </div>
-        <div className="mt-5 grid grid-cols-2 gap-3 text-slate-800">
+        <div className="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-3 text-slate-800">
           {productsData.map((productData) => (
             <div key={productData.id}>
               <Card className="min-h-[20rem] relative">
@@ -94,10 +94,12 @@ const Store = () => {
                       className="mx-auto"
                     />
                   </div>
-                  <CardTitle>{productData.name}</CardTitle>
-                  <CardDescription>{productData.description}</CardDescription>
+                  <div className="lg:text-center lg:mt-3">
+                    <CardTitle>{productData.name}</CardTitle>
+                    <CardDescription>{productData.description}</CardDescription>
+                  </div>
                 </CardHeader>
-                <CardContent className="p-3 absolute bottom-3">
+                <CardContent className="p-3 bottom-3 lg:flex lg:flex-col lg:items-center lg:justify-center">
                   <div className="text-primary font-medium text-center">{`${productData.price} Mt`}</div>
                   <div className="flex justify-center my-2">
                     <ProductQuantity />

@@ -42,11 +42,11 @@ const products = [
 
 export function ProductsCarousel() {
   return (
-    <Carousel className="w-[70%] mx-auto">
+    <Carousel className="w-[70%] lg:w-[80%] mx-auto">
       <CarouselPrevious />
       <CarouselContent>
         {products.map((product) => (
-          <CarouselItem key={product.id}>
+          <CarouselItem key={product.id} className="lg:basis-1/4">
             <div className="p-1">
               <Card>
                 <CardContent className="flex flex-col p-3 justify-center">

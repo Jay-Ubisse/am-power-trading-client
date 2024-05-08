@@ -12,7 +12,7 @@ export const NavLinks = () => {
           className={`px-2 py-1 border-b ${
             currentPath === "/"
               ? "text-primary border-primary rounded-md"
-              : "border-transparent"
+              : "border-transparent lg:text-slate-800 hover:text-primary"
           }`}
         >
           Página inicial
@@ -24,7 +24,7 @@ export const NavLinks = () => {
           className={`px-2 py-1 border-b ${
             currentPath === "/store"
               ? "text-primary border-primary rounded-md"
-              : "border-transparent"
+              : "border-transparent lg:text-slate-800 hover:text-primary"
           }`}
         >
           Loja
@@ -36,7 +36,7 @@ export const NavLinks = () => {
           className={`px-2 py-1 ${
             currentPath === "/about"
               ? "text-primary bg-primary rounded-md"
-              : "border-transparent"
+              : "border-transparent lg:text-slate-800 hover:text-primary"
           }`}
         >
           Sobre
@@ -48,7 +48,7 @@ export const NavLinks = () => {
           className={`px-2 py-1 border-b ${
             currentPath === "/contact"
               ? "text-primary border-primary rounded-md"
-              : "border-transparent"
+              : "border-transparent lg:text-slate-800 hover:text-primary"
           }`}
         >
           Contacto
@@ -60,7 +60,7 @@ export const NavLinks = () => {
           className={`px-2 py-1 border-b ${
             currentPath === "/faq"
               ? "text-primary border-primary rounded-md"
-              : "border-transparent"
+              : "border-transparent lg:text-slate-800 hover:text-primary"
           }`}
         >
           FAQ

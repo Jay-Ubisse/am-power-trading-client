@@ -6,30 +6,32 @@ export const Footer = () => {
   const date = new Date();
 
   return (
-    <footer className="bg-primary-foreground flex flex-col gap-8 pt-7">
-      <FooterSection
-        title="Contacto"
-        items={["vendas@site.co.mz", "(+258} 84 883 9501 / 87 702 7713"]}
-        icons={[
-          <Facebook key="1" />,
-          <X key="2" />,
-          <Instagram key="3" />,
-          <YouTube key="4" />,
-        ]}
-      />
-      <FooterSection
-        title="Suporte ao cliente"
-        items={["Contacte-nos", "Centro de Ajuda", "Sobre Nós"]}
-      />
-      <FooterSection
-        title="Política"
-        items={[
-          "Envios e Devoluções",
-          "Termos e Condições",
-          "Métodos de Pagamentos",
-          "FAQ",
-        ]}
-      />
+    <footer className="bg-primary-foreground flex flex-col pt-7">
+      <div className="flex flex-col lg:flex-row lg:justify-evenly gap-8">
+        <FooterSection
+          title="Contacto"
+          items={["vendas@site.co.mz", "(+258} 84 883 9501 / 87 702 7713"]}
+          icons={[
+            <Facebook key="1" />,
+            <X key="2" />,
+            <Instagram key="3" />,
+            <YouTube key="4" />,
+          ]}
+        />
+        <FooterSection
+          title="Suporte ao cliente"
+          items={["Contacte-nos", "Centro de Ajuda", "Sobre Nós"]}
+        />
+        <FooterSection
+          title="Política"
+          items={[
+            "Envios e Devoluções",
+            "Termos e Condições",
+            "Métodos de Pagamentos",
+            "FAQ",
+          ]}
+        />
+      </div>
       <hr className="h-[1px] w-[90%] mx-auto bg-muted my-6" />
       <section>
         <h4 className="text-slate-800 text-sm font-medium text-center">
@@ -79,7 +81,10 @@ export const Footer = () => {
         </div>
       </section>
       <section className="bg-slate-100 text-slate-800 text-center py-3 text-xs font-light">
-        <p>&copy; {date.getFullYear()} AM Power Trading.</p>
+        <p>
+          &copy; {date.getFullYear()} AM Power Trading. Todos os direitos
+          reservados
+        </p>
       </section>
     </footer>
   );

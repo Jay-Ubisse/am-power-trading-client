@@ -11,7 +11,7 @@ export const NewsletterForm = () => {
       />
       <Button
         type="submit"
-        className="bg-cyan-950 text-primary-foreground w-full mt-2"
+        className="bg-cyan-950  hover:bg-cyan-950/90 text-primary-foreground w-full mt-2"
       >
         Subscrever-se
       </Button>
