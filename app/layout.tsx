@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ReactQueryProvider } from "@/providers/react-query-provider";
 import { ReactHotToaster } from "@/providers/toaster";
+import { CartProvider } from "@/contexts/cart-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,10 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} relative`}>
         <ReactQueryProvider>
-          <ReactHotToaster />
-          <Header />
-          {children}
-          <Footer />
+          <CartProvider>
+            <ReactHotToaster />
+            <Header />
+            {children}
+            <Footer />
+          </CartProvider>
         </ReactQueryProvider>
       </body>
     </html>

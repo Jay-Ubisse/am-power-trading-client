@@ -1,4 +1,3 @@
-import { ProductQuantity } from "@/components/product-quantity";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -10,66 +9,81 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import CloseIcon from "@mui/icons-material/Close";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import LockIcon from "@mui/icons-material/Lock";
-import Image from "next/image";
+
+import { useCart } from "@/contexts/cart-context";
+import { CartItemCard } from "@/components/cart-item-card";
 
 export function Cart() {
+  const { cart } = useCart();
+  let total = 0;
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <LocalMallIcon />
+        <div className="flex items-center cursor-pointer hover:text-primary">
+          <LocalMallIcon />
+          <span className="">{cart.length}</span>
+        </div>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="p-4 overflow-y-scroll">
         <SheetHeader>
           <SheetTitle>Minha Carrinha</SheetTitle>
           <SheetDescription>
-            Estes são os produtos adicionados à carrinha. Clique em Checkout
-            para efectuar a compra.
+            {cart.length === 0 ? (
+              <p>A sua carrinha está vazia. Adicione produtos à carrinha.</p>
+            ) : (
+              <p>
+                Estes são os produtos adicionados à carrinha. Clique em Checkout
+                para efectuar a compra.
+              </p>
+            )}
           </SheetDescription>
         </SheetHeader>
         <div className="my-5">
-          <div className="border-t border-slate-200 mx-auto py-3">
-            <div className="flex gap-2">
-              <div className="h-16 w-16">
-                <Image
-                  src={"/toolkit.jpeg"}
-                  alt="m-pesa logo"
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  style={{ width: "100%", height: "auto" }}
-                />
-              </div>
-              <div className="relative text-slate-800 flex-1 flex justify-between">
-                <div>
-                  <h2 className="font-medium text-sm">
-                    Kit de ferramentas de electricidade
-                  </h2>
-                  <h3 className="text-xs mt-1">
-                    Kit completo de electricidade
-                  </h3>
-                </div>
-                <CloseIcon style={{ fontSize: 20 }} />
-              </div>
-            </div>
-            <div className="flex justify-between mt-3">
-              <ProductQuantity />
-              <p className="text-slate-800 font-medium text-sm">12,440.00 MT</p>
-            </div>
-          </div>
+          {cart.map((cartItem) => {
+            total += cartItem.subTotal;
+            console.log(cartItem.id);
+            return (
+              <CartItemCard
+                id={cartItem.id}
+                key={cartItem.id}
+                brand={cartItem.brand}
+                imageUrl={cartItem.imageUrl}
+                name={cartItem.name}
+                price={Number(cartItem.price.toFixed(2))}
+                quantity={cartItem.quantity}
+                subTotal={Number(cartItem.subTotal.toFixed(2))}
+              />
+            );
+          })}
         </div>
         <SheetFooter>
           <SheetClose asChild>
             <div className="w-full">
-              <Button type="submit" className="w-full">
-                Checkout
-              </Button>
-              <div className="text-slate-800 text-xs flex justify-center items-center gap-2 mt-2">
-                <LockIcon style={{ fontSize: 10 }} />
-                <p>Compra segura</p>
-              </div>
+              <section className="border-y border-slate-300 py-3 mb-3 text-slate-800">
+                <div className="flex justify-between">
+                  <p>Subtotal</p>
+                  <p>{total} MT</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Taxa de entrega</p>
+                  <p>{0} MT</p>
+                </div>
+                <div className="flex justify-between font-semibold">
+                  <h2>Total</h2>
+                  <h2>{total} MT</h2>
+                </div>
+              </section>
+              <section>
+                <Button type="submit" className="w-full">
+                  Checkout
+                </Button>
+                <div className="text-slate-800 text-xs flex justify-center items-center gap-2 mt-2">
+                  <LockIcon style={{ fontSize: 10 }} />
+                  <p>Compra segura</p>
+                </div>
+              </section>
             </div>
           </SheetClose>
         </SheetFooter>
