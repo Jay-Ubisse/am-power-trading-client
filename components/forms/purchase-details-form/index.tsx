@@ -46,7 +46,7 @@ export function PurchaseDetailsForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    toast.loading("Cadastrando produto...", { id: "1" });
+    toast.loading("Processando pedido...", { id: "1" });
     try {
       const productsData = {
         custumerName: session?.user.name,

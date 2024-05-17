@@ -27,7 +27,7 @@ export async function createOrder({
     cartItems,
   };
 
-  console.log(orderData);
+  //console.log(orderData);
   const response = await axios.post("/api/orders", orderData, {
     headers: {
       "Content-Type": "application/json",

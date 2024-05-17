@@ -15,6 +15,7 @@ import {
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 import { signOut } from "next-auth/react";
 import { UserCircle, SignOut, User as UserIcon } from "@phosphor-icons/react";
+import { Button } from "../ui/button";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 
@@ -45,6 +46,10 @@ export const User = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 py-4 mt-4">
         <p className="text-sm text-center mb-5">{session.user.email}</p>
+        <DropdownMenuSeparator />
+        <div className="w-fit mx-auto">
+          <Button>Meus Pedidos</Button>
+        </div>
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem
           checked={showPanel}
