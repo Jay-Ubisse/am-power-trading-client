@@ -11,10 +11,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { baseUrl, getProducts } from "@/services/products";
+import { getProducts } from "@/services/products";
 import { useQuery } from "react-query";
 import Image from "next/image";
 import { ProductQuantity } from "@/components/product-quantity";
+import { ProductCard } from "@/components/product-card";
 
 const Store = () => {
   const {
@@ -79,36 +80,16 @@ const Store = () => {
           </div>
         </div>
         <div className="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-3 text-slate-800">
-          {productsData.map((productData) => (
-            <div key={productData.id}>
-              <Card className="min-h-[20rem] relative">
-                <CardHeader className="p-3">
-                  <div className="w-full h-[7rem]">
-                    <Image
-                      src={`${baseUrl}${productData.image}`}
-                      alt="Product Image"
-                      width="0"
-                      height="0"
-                      sizes="100vw"
-                      style={{ width: "auto", height: "100%" }}
-                      className="mx-auto"
-                    />
-                  </div>
-                  <div className="lg:text-center lg:mt-3">
-                    <CardTitle>{productData.name}</CardTitle>
-                    <CardDescription>{productData.description}</CardDescription>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-3 bottom-3 lg:flex lg:flex-col lg:items-center lg:justify-center">
-                  <div className="text-primary font-medium text-center">{`${productData.price} Mt`}</div>
-                  <div className="flex justify-center my-2">
-                    <ProductQuantity />
-                  </div>
-                  <div>
-                    <Button size={"sm"}>Adicionar à carrinha</Button>
-                  </div>
-                </CardContent>
-              </Card>
+          {productsData.map((product) => (
+            <div key={product.id}>
+              <ProductCard
+                id={product.id}
+                brand={product.brand}
+                name={product.name}
+                imageUrl={product.imageUrl}
+                price={product.price}
+                category={product.category}
+              />
             </div>
           ))}
         </div>
