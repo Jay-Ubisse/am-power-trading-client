@@ -49,11 +49,13 @@ export function PurchaseDetailsForm() {
     toast.loading("Processando pedido...", { id: "1" });
     try {
       const productsData = {
+        custumerId: Number(session?.user.id),
         custumerName: session?.user.name,
         custumerEmail: session?.user.email,
         cellPhone: values.cellPhone,
         optionalCellPhone: values.optionalCellPhone,
         neighborhood: values.neighborhood,
+        avenue: values.avenue,
         addressInfo: values.addressInfo,
         cartItems: cart,
       };
