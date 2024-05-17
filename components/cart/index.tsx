@@ -1,3 +1,6 @@
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -17,7 +20,19 @@ import { BagSimple } from "@phosphor-icons/react";
 
 export function Cart() {
   const { cart } = useCart();
+  const router = useRouter();
+  const { data: session } = useSession();
   let total = 0;
+
+  function handleCheckout() {
+    if (cart.length === 0) return;
+    if (!session) {
+      router.push("/sign-in");
+    } else {
+      router.push("/orders/purchase-details");
+    }
+  }
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -76,7 +91,7 @@ export function Cart() {
                 </div>
               </section>
               <section>
-                <Button type="submit" className="w-full">
+                <Button onClick={() => handleCheckout()} className="w-full">
                   Checkout
                 </Button>
                 <div className="text-slate-800 text-xs flex justify-center items-center gap-2 mt-2">
