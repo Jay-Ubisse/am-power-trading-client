@@ -9,11 +9,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import LocalMallIcon from "@mui/icons-material/LocalMall";
 import LockIcon from "@mui/icons-material/Lock";
 
 import { useCart } from "@/contexts/cart-context";
 import { CartItemCard } from "@/components/cart-item-card";
+import { BagSimple } from "@phosphor-icons/react";
 
 export function Cart() {
   const { cart } = useCart();
@@ -22,7 +22,7 @@ export function Cart() {
     <Sheet>
       <SheetTrigger asChild>
         <div className="flex items-center cursor-pointer hover:text-primary">
-          <LocalMallIcon />
+          <BagSimple size={28} />
           <span className="">{cart.length}</span>
         </div>
       </SheetTrigger>

@@ -6,6 +6,7 @@ import "./globals.css";
 import { ReactQueryProvider } from "@/providers/react-query-provider";
 import { ReactHotToaster } from "@/providers/toaster";
 import { CartProvider } from "@/contexts/cart-context";
+import { Session } from "@/providers/session";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,14 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} relative`}>
-        <ReactQueryProvider>
-          <CartProvider>
-            <ReactHotToaster />
-            <Header />
-            {children}
-            <Footer />
-          </CartProvider>
-        </ReactQueryProvider>
+        <Session>
+          <ReactQueryProvider>
+            <CartProvider>
+              <ReactHotToaster />
+              <Header />
+              {children}
+              <Footer />
+            </CartProvider>
+          </ReactQueryProvider>
+        </Session>
       </body>
     </html>
   );

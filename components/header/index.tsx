@@ -6,6 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { NavLinks } from "./navlinks";
+import { User } from "./user";
 
 export const Header = () => {
   const [visible, setVisible] = useState(false);
@@ -80,13 +81,16 @@ export const Header = () => {
             LOGO
           </h1>
         </Link>
-        <section className="flex gap-8   h-full">
+        <section className="flex gap-8 h-full">
           <nav
             className={`flex justify-end w-fit h-fit bg-transparent text-white`}
           >
             <NavLinks />
           </nav>
-          <Cart />
+          <div className="flex gap-2">
+            <User />
+            <Cart />
+          </div>
         </section>
       </header>
     </>
