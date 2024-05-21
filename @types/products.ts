@@ -32,7 +32,7 @@ interface CartItemsProps {
   subTotal: number;
 }
 
-export interface OrderProps {
+interface OrderProps {
   addressInfo: string;
   avenue: string;
   cellPhone: string;
