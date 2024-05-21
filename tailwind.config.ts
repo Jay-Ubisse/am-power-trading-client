@@ -18,6 +18,12 @@ const config = {
       },
     },
     extend: {
+      width: {
+        a4: "210mm",
+      },
+      height: {
+        a4: "297mm",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

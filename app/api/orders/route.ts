@@ -2,6 +2,28 @@ import { db } from "@/lib/db";
 
 import { NextResponse } from "next/server";
 
+export const GET = async (req: Request, res: NextResponse) => {
+  try {
+    const url = new URL(req.url);
+
+    const id = url.searchParams.get("orderId") as string;
+
+    const order = await db.orders.findUnique({
+      where: { id: Number(id) },
+    });
+
+    return NextResponse.json(
+      { order: order, message: "Pedido obtido!" },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Ocorreu um erro ao obter pedido.", error },
+      { status: 500 }
+    );
+  }
+};
+
 export async function POST(req: Request) {
   const body = await req.json();
 

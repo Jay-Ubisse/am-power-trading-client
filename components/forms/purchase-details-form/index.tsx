@@ -64,7 +64,8 @@ export function PurchaseDetailsForm() {
       //console.log(response);
       if (response!.status === 201) {
         toast.success(response!.data.message, { id: "1" });
-        router.push("/orders/purchase-confirmation");
+        console.log(response!.data.order.id);
+        router.push(`/orders/order-details/${response!.data.order.id}`);
       } else {
         toast.error(response!.data.message, { id: "1" });
       }
@@ -169,7 +170,7 @@ export function PurchaseDetailsForm() {
           />
           <div className="ml-auto w-fit flex gap-2">
             <Link
-              href={"/cart"}
+              href={"/store"}
               className="bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 rounded-md font-medium"
             >
               Cancelar

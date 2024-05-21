@@ -31,3 +31,18 @@ interface CartItemsProps {
   quantity: number;
   subTotal: number;
 }
+
+export interface OrderProps {
+  addressInfo: string;
+  avenue: string;
+  cellPhone: string;
+  createdAt: string;
+  custumerEmail: string;
+  custumerId: number;
+  custumerName: string;
+  id: number;
+  neighborhood: string;
+  optionalCellPhone: string;
+  products: string;
+  status: string;
+}

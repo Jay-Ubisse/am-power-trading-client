@@ -42,3 +42,21 @@ export async function createOrder({
 
   return response;
 }
+
+export async function getOrder({
+  orderId,
+}: {
+  orderId: string;
+}): Promise<AxiosResponse<any, any> | undefined> {
+  //console.log(data);
+
+  const params = {
+    orderId,
+  };
+  try {
+    const response = await axios.get(`/api/orders/`, { params });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}

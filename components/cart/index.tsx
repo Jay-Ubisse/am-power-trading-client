@@ -29,7 +29,7 @@ export function Cart() {
     if (!session) {
       router.push("/sign-in");
     } else {
-      router.push("/orders/purchase-details");
+      router.push("/orders/custumer-info-for-order");
     }
   }
 
