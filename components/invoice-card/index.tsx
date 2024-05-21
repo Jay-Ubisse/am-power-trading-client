@@ -1,4 +1,3 @@
-import { OrderProps } from "@/@types/products";
 import { Footnote, PageBottom, Tailwind } from "@onedoc/react-print";
 
 export const InvoiceCard = ({ orderData }: { orderData: OrderProps }) => {
