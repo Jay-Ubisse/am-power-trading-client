@@ -60,3 +60,14 @@ export async function getOrder({
     console.log(error);
   }
 }
+
+export async function getAllOrders(): Promise<OrderProps[] | undefined> {
+  //console.log(data);
+
+  try {
+    const response = await axios.get(`/api/orders/all`);
+    return response.data.orders;
+  } catch (error) {
+    console.log(error);
+  }
+}

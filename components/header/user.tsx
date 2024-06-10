@@ -4,6 +4,7 @@ import * as React from "react";
 import { useSession } from "next-auth/react";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import {
   DropdownMenu,
@@ -21,8 +22,9 @@ type Checked = DropdownMenuCheckboxItemProps["checked"];
 
 export const User = () => {
   const { data: session } = useSession();
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
   const [showPanel, setShowPanel] = React.useState<Checked>(false);
+
+  const router = useRouter();
 
   if (!session) {
     return (
@@ -48,7 +50,13 @@ export const User = () => {
         <p className="text-sm text-center mb-5">{session.user.email}</p>
         <DropdownMenuSeparator />
         <div className="w-fit mx-auto">
-          <Button>Meus Pedidos</Button>
+          <Button
+            onClick={() => {
+              router.push("orders/my-orders");
+            }}
+          >
+            Meus Pedidos
+          </Button>
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem
