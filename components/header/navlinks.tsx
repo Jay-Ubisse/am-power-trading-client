@@ -20,7 +20,7 @@ export const NavLinks = () => {
       </li>
       <li>
         <Link
-          href="store"
+          href="/store"
           className={`px-2 py-1 border-b ${
             currentPath === "/store"
               ? "text-primary border-primary rounded-md"
@@ -32,7 +32,7 @@ export const NavLinks = () => {
       </li>
       <li>
         <Link
-          href="about"
+          href="/about"
           className={`px-2 py-1 border-b ${
             currentPath === "/about"
               ? "text-primary border-primary rounded-md"
@@ -44,7 +44,7 @@ export const NavLinks = () => {
       </li>
       <li>
         <Link
-          href="contact"
+          href="/contact"
           className={`px-2 py-1 border-b ${
             currentPath === "/contact"
               ? "text-primary border-primary rounded-md"

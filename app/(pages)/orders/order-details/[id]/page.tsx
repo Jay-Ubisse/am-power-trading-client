@@ -65,11 +65,26 @@ const OrderDetails = ({ params }: { params: { id: string } }) => {
     <div>
       <main className="w-fit mx-auto mt-10">
         <section className="mb-5 pb-5 border-b border-slate-300 text-slate-800">
-          <h1 className="font-semibold text-xl">Pedido Feito com sucesso!</h1>
-          <p>
-            Olá, {session?.user.name}. Recebemos o seu pedido, entraremos em
-            contacto em breve.
-          </p>
+          {order.data.order === "pending" ? (
+            <div>
+              <h1 className="font-semibold text-xl">
+                Pedido Feito com sucesso!
+              </h1>
+              <p>
+                Olá, {session?.user.name}. Recebemos o seu pedido, entraremos em
+                contacto em breve.
+              </p>
+            </div>
+          ) : (
+            <div>
+              {" "}
+              <h1 className="font-semibold text-xl">Pagamento feito!</h1>
+              <p>
+                Olá, {session?.user.name}. Este pedido foi concluido e produto
+                já foi entregue.
+              </p>
+            </div>
+          )}
         </section>
         <section>
           <InvoiceCard orderData={order.data.order} />

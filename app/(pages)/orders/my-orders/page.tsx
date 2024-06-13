@@ -120,7 +120,7 @@ const MyOrders = () => {
                   </span>
                 </TableCell>
                 <TableCell className="flex gap-2 items-center">
-                  <Link href={"#"}>
+                  <Link href={`/orders/order-details/${order.id}`}>
                     <Button size={"sm"} className="flex gap-2 bg-green-500">
                       <Info size={20} />
                       <span>Ver detalhas</span>

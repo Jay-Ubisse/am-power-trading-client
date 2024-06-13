@@ -13,6 +13,9 @@ export const GET = async (req: Request, res: NextResponse) => {
       where: {
         custumerId: Number(id),
       },
+      orderBy: {
+        createdAt: "desc",
+      },
     });
     return NextResponse.json(
       { orders: orders, message: "Pedidos obtidos!" },

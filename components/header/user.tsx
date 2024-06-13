@@ -50,13 +50,9 @@ export const User = () => {
         <p className="text-sm text-center mb-5">{session.user.email}</p>
         <DropdownMenuSeparator />
         <div className="w-fit mx-auto">
-          <Button
-            onClick={() => {
-              router.push("orders/my-orders");
-            }}
-          >
-            Meus Pedidos
-          </Button>
+          <Link href="/orders/my-orders">
+            <Button>Meus Pedidos</Button>
+          </Link>
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem

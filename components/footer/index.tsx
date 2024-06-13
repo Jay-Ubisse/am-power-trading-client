@@ -10,7 +10,16 @@ export const Footer = () => {
       <div className="flex flex-col lg:flex-row lg:justify-evenly gap-8">
         <FooterSection
           title="Contacto"
-          items={["vendas@site.co.mz", "(+258} 84 883 9501 / 87 702 7713"]}
+          links={[
+            {
+              label: "vendas@site.co.mz",
+              url: "malito:vendas@site.co.mz",
+            },
+            {
+              label: "(+258} 84 883 9501 / 87 702 7713",
+              url: "#",
+            },
+          ]}
           icons={[
             <Facebook key="1" />,
             <X key="2" />,
@@ -20,15 +29,40 @@ export const Footer = () => {
         />
         <FooterSection
           title="Suporte ao cliente"
-          items={["Contacte-nos", "Centro de Ajuda", "Sobre Nós"]}
+          links={[
+            {
+              label: "Contacte-nos",
+              url: "/contact",
+            },
+            {
+              label: "Centro de Ajuda",
+              url: "https://wa.me/258848839501",
+            },
+            {
+              label: "Sobre Nós",
+              url: "/about",
+            },
+          ]}
         />
         <FooterSection
           title="Política"
-          items={[
-            "Envios e Devoluções",
-            "Termos e Condições",
-            "Métodos de Pagamentos",
-            "FAQ",
+          links={[
+            {
+              label: "Envios e Devoluções",
+              url: "#",
+            },
+            {
+              label: "Termos e Condições",
+              url: "#",
+            },
+            {
+              label: "Métodos de Pagamentos",
+              url: "#",
+            },
+            {
+              label: "FAQ",
+              url: "#",
+            },
           ]}
         />
       </div>
